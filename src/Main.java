@@ -22,13 +22,13 @@ public class Main {
                 System.out.println("                      2-ФЕВ. 4-АПР. 6-ИЮНЬ. 8-АВГ.  10-ОКТ. 12-ДЕК.");
                 int n = scanner.nextInt();
                 System.out.println("Количество пройденных шагов по дням:");
-                monthData.printDaysAndStepsFromMonth(n);
-                System.out.println("Сумма пройденных шагов за месяц " + monthData.sumStepsFromMonth());
-                System.out.println("Максимальное пройденное количество шагов в месяц: " + monthData.maxSteps());
-                System.out.println("В среднем пройденно шагов в день: " + monthData.averageNumber());
-                System.out.println("Пройдено киломентров: " + converter.convertToKm(monthData.maxSteps()));
-                System.out.println("Сожжено килокалорий: " + converter.convertStepsToKilocalories(monthData.maxSteps()));
-                System.out.println("Лучшая серия: " + monthData.bestSeries(goalByStepsPerDay));
+                monthData.printDaysAndStepsFromMonth(StepTracker.monthToData, n);
+                System.out.println("Сумма пройденных шагов за месяц " + monthData.sumStepsFromMonth(StepTracker.monthToData, n));
+                System.out.println("Максимальное пройденное количество шагов в месяц: " + monthData.maxSteps(StepTracker.monthToData, n));
+                System.out.println("В среднем пройденно шагов в день: " + monthData.averageNumber(StepTracker.monthToData, n));
+                System.out.println("Пройдено киломентров: " + converter.convertToKm(monthData.sumStepsFromMonth(StepTracker.monthToData, n)));
+                System.out.println("Сожжено килокалорий: " + converter.convertStepsToKilocalories(monthData.sumStepsFromMonth(StepTracker.monthToData, n)));
+                System.out.println("Лучшая серия: " + monthData.bestSeries(goalByStepsPerDay, StepTracker.monthToData, n));
             } else if (command == 0) {
                 System.out.println("Выход");
                 break;
