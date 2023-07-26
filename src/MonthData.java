@@ -38,9 +38,8 @@ public class MonthData {
                 if (currentSeries > bestSeries){
                     bestSeries = currentSeries;
                 }
-                if (monthToData[n-1].days[i+1] < goalByStepsPerDay){
-                    currentSeries = 0;
-                }
+            }else {
+                currentSeries = 0;
             }// поиск максимальной серии
         }
         return bestSeries;

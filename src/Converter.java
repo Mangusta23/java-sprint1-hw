@@ -1,7 +1,7 @@
 public class Converter {
 
     int convertToKm(int sumSteps){
-        int distance = sumSteps * 3 / 4;
+        int distance = sumSteps * 3 / 4000;
         return distance;
     }
 
