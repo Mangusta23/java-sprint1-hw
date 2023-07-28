@@ -21,9 +21,12 @@ class StepTracker {
             System.out.println("Вы выбрали: " + m);
             System.out.println("1 - Подтвердить");
             System.out.println("2 - Выбрать другой месяц");
+            System.out.println("3 - Вернуться в главное меню");
             int x = scanner.nextInt();
             if (x == 1){          // Добавил возможность верутся к выбору месяца в случае ошибки
                 break;
+            }else if (x == 3){
+                return;
             }
         }
         while (m > 12 || m < 1){
